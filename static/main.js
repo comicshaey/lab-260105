@@ -111,11 +111,49 @@ function setupTopButton(){
 function setLastUpdated(){
   const el = $("#lastUpdated");
   if(!el) return;
-  // 정적사이트라 빌드 시점 자동 주입은 어려움 -> 운영자가 날짜만 수동으로 바꾸는 방식 추천
-  // 여기서는 "페이지 로딩 기준" 표기만 제공
   const d = new Date();
   const s = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
   el.textContent = s;
+}
+
+/* 우클릭 방지(기본 수준)
+   - 완전 차단은 웹 구조상 불가(개발자도구로 우회 가능)
+   - 하지만 “일반 사용자 수준”에선 충분히 효과 있음
+*/
+function disableRightClick(){
+  document.addEventListener("contextmenu", (e)=> e.preventDefault());
+
+  document.addEventListener("dragstart", (e)=>{
+    if(e.target && e.target.tagName === "IMG") e.preventDefault();
+  });
+}
+
+/* 전 페이지 꼬릿말(footer) 통일 적용 */
+function applyGlobalFooter(){
+  const html = `
+    <div class="wrap row">
+      <div>
+        제작자: 커여운 고주무관 · Contact:
+        <a href="mailto:edusproutcomics@naver.com">edusproutcomics@naver.com</a>
+        · 개인적으로 만든 비공식 사이트입니다.
+      </div>
+      <div class="small">
+        <a href="about.html">운영 원칙</a> · <a href="guide.html">사용 가이드</a> · <a href="glossary.html">용어·FAQ</a>
+      </div>
+    </div>
+  `;
+
+  let footer = document.querySelector("footer.footer");
+
+  // footer가 없으면 생성
+  if(!footer){
+    footer = document.createElement("footer");
+    footer.className = "footer";
+    document.body.appendChild(footer);
+  }
+
+  // 내용 통일(덮어쓰기)
+  footer.innerHTML = html;
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -124,4 +162,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   setupTOC();
   setupTopButton();
   setLastUpdated();
+
+  disableRightClick();
+  applyGlobalFooter();
 });
