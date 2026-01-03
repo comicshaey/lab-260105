@@ -339,3 +339,40 @@ details[open]{background: rgba(255,255,255,.06);}
   background: rgba(0,0,0,.25);
   overflow:auto;
 }
+
+/* =============================
+   이미지 캡처 카드(에듀파인 팁용)
+   ============================= */
+.imggrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+  margin: 10px 0;
+}
+@media (max-width: 980px){
+  .imggrid{grid-template-columns:1fr;}
+}
+
+.imgcard{
+  border:1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+  overflow:hidden;
+}
+.imgcard img{
+  width:100%;
+  display:block;
+  background: rgba(0,0,0,.2);
+}
+.imgcap{
+  padding:10px 12px;
+}
+.imgcap .t{
+  font-weight:850;
+  margin:0 0 6px;
+}
+.imgcap .d{
+  margin:0;
+  color: var(--muted);
+  font-size: .92rem;
+}
