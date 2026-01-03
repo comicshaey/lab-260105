@@ -1,5 +1,5 @@
 /* edulabhaey 공통 JS
-   - 목적: 정적사이트에서도 "찾기/목차/상단이동" 정도는 있어야 실무에서 씀
+   - 정적사이트라도: 공통 네비/검색/목차/상단이동/푸터/라이트박스는 있어야 굴러감
 */
 
 const PAGES = [
@@ -14,13 +14,43 @@ const PAGES = [
   { url:"glossary.html",title:"용어사전·FAQ", desc:"신규가 막히는 용어/상황 정리" },
 ];
 
+const NAV_ITEMS = [
+  { url:"index.html",   label:"홈" },
+  { url:"guide.html",   label:"사용가이드" },
+  { url:"map.html",     label:"업무 맵" },
+  { url:"wave.html",    label:"파도타기" },
+  { url:"expend.html",  label:"지출결의" },
+  { url:"payroll.html", label:"인건비" },
+  { url:"skills.html",  label:"실무스킬" },
+  { url:"glossary.html",label:"용어·FAQ" },
+];
+
 function $(sel, el=document){ return el.querySelector(sel); }
 function $all(sel, el=document){ return [...el.querySelectorAll(sel)]; }
 
+function currentPath(){
+  return location.pathname.split("/").pop() || "index.html";
+}
+
+/* ===== 상단 메뉴 전 페이지 공통화 =====
+   - 페이지마다 nav 구성이 달라서 "메뉴가 사라지는 것처럼" 보이는 문제 해결
+   - header 안에 <nav class="nav">만 있으면 내용은 JS가 통일해줌
+*/
+function applyGlobalNav(){
+  const nav = $("header .nav");
+  if(!nav) return;
+
+  nav.innerHTML = NAV_ITEMS.map(it =>
+    `<a data-nav href="${it.url}">${it.label}</a>`
+  ).join("");
+
+  setActiveNav();
+}
+
 function setActiveNav(){
-  const path = location.pathname.split("/").pop() || "index.html";
+  const path = currentPath();
   $all("[data-nav]").forEach(a=>{
-    if(a.getAttribute("href") === path) a.classList.add("active");
+    a.classList.toggle("active", a.getAttribute("href") === path);
   });
 }
 
@@ -116,10 +146,7 @@ function setLastUpdated(){
   el.textContent = s;
 }
 
-/* 우클릭 방지(기본 수준)
-   - 완전 차단은 웹 구조상 불가(개발자도구로 우회 가능)
-   - 하지만 “일반 사용자 수준”에선 충분히 효과 있음
-*/
+/* 우클릭 방지(기본 수준) */
 function disableRightClick(){
   document.addEventListener("contextmenu", (e)=> e.preventDefault());
 
@@ -144,20 +171,144 @@ function applyGlobalFooter(){
   `;
 
   let footer = document.querySelector("footer.footer");
-
-  // footer가 없으면 생성
   if(!footer){
     footer = document.createElement("footer");
     footer.className = "footer";
     document.body.appendChild(footer);
   }
-
-  // 내용 통일(덮어쓰기)
   footer.innerHTML = html;
 }
 
+/* ===== 라이트박스(튜토리얼 슬라이드) =====
+   요구사항:
+   1) 이미지 오버레이(번호/원) -> HTML에 마커 넣으면 확대에서도 그대로 보이게 "복제"
+   2) 확대 상태에서 캡션 고정 -> figcaption을 캡션으로 가져와 하단 고정
+   3) ← → 키로 이미지 넘기기 -> 같은 그룹(data-lb-group) 기준 슬라이드
+*/
+function setupImageLightbox(){
+  // 라이트박스 DOM
+  const lb = document.createElement("div");
+  lb.className = "lightbox";
+  lb.innerHTML = `
+    <div class="lb-inner" role="dialog" aria-modal="true">
+      <button class="lb-btn lb-close" type="button" aria-label="닫기">✕</button>
+      <button class="lb-btn lb-prev" type="button" aria-label="이전">←</button>
+      <button class="lb-btn lb-next" type="button" aria-label="다음">→</button>
+
+      <div class="lb-stage">
+        <div class="lb-imgwrap">
+          <img class="lb-img" src="" alt="확대 이미지">
+          <div class="lb-overlay"></div>
+        </div>
+      </div>
+
+      <div class="lb-caption">
+        <div class="lb-title"></div>
+        <div class="lb-desc"></div>
+        <div class="lb-hint">ESC 닫기 · ←/→ 이동 · 클릭 닫기</div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(lb);
+
+  const imgEl = $(".lb-img", lb);
+  const ovEl  = $(".lb-overlay", lb);
+  const tEl   = $(".lb-title", lb);
+  const dEl   = $(".lb-desc", lb);
+
+  let items = [];
+  let idx = 0;
+
+  const collectItems = (group)=>{
+    const sel = group ? `.img-zoomable[data-lb-group="${group}"]` : `.img-zoomable`;
+    return $all(sel).map(img=>{
+      const figure = img.closest("figure");
+      const capT = figure ? $(".imgcap .t", figure)?.textContent?.trim() : "";
+      const capD = figure ? $(".imgcap .d", figure)?.textContent?.trim() : "";
+      const overlay = figure ? $(".imgwrap .overlay", figure) : null;
+      return { img, capT, capD, overlay };
+    });
+  };
+
+  const openAt = (newItems, newIdx)=>{
+    items = newItems;
+    idx = newIdx;
+
+    const it = items[idx];
+    imgEl.src = it.img.src;
+
+    // 캡션 고정
+    tEl.textContent = it.capT || "";
+    dEl.textContent = it.capD || "";
+
+    // 오버레이 복제(마커)
+    ovEl.innerHTML = "";
+    if(it.overlay){
+      ovEl.innerHTML = it.overlay.innerHTML;
+    }
+
+    lb.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  };
+
+  const close = ()=>{
+    lb.style.display = "none";
+    imgEl.src = "";
+    ovEl.innerHTML = "";
+    document.body.style.overflow = "";
+  };
+
+  const move = (dir)=>{
+    if(!items.length) return;
+    idx = (idx + dir + items.length) % items.length;
+    const it = items[idx];
+
+    imgEl.src = it.img.src;
+    tEl.textContent = it.capT || "";
+    dEl.textContent = it.capD || "";
+    ovEl.innerHTML = it.overlay ? it.overlay.innerHTML : "";
+  };
+
+  // 썸네일 클릭 -> 열기
+  document.addEventListener("click", (e)=>{
+    const img = e.target.closest(".img-zoomable");
+    if(!img) return;
+
+    const group = img.getAttribute("data-lb-group") || "";
+    const list = collectItems(group);
+    const start = list.findIndex(x => x.img === img);
+    openAt(list, Math.max(0, start));
+  });
+
+  // 닫기(배경 클릭/버튼)
+  lb.addEventListener("click", (e)=>{
+    if(e.target === lb) close();
+  });
+  $(".lb-close", lb).addEventListener("click", close);
+
+  // 이전/다음 버튼
+  $(".lb-prev", lb).addEventListener("click", ()=> move(-1));
+  $(".lb-next", lb).addEventListener("click", ()=> move(+1));
+
+  // 키보드
+  document.addEventListener("keydown", (e)=>{
+    if(lb.style.display !== "flex") return;
+
+    if(e.key === "Escape") close();
+    if(e.key === "ArrowLeft") move(-1);
+    if(e.key === "ArrowRight") move(+1);
+  });
+
+  // 스테이지 클릭하면 닫기(이미지 자체 클릭 제외)
+  $(".lb-stage", lb).addEventListener("click", (e)=>{
+    // 이미지 클릭은 확대 유지(실수로 닫히는 것 방지)
+    if(e.target && (e.target.classList.contains("lb-img") || e.target.closest(".lb-imgwrap"))) return;
+    close();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", ()=>{
-  setActiveNav();
+  applyGlobalNav();      // ✅ 전 페이지 메뉴 통일
   setupSearch();
   setupTOC();
   setupTopButton();
@@ -165,4 +316,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   disableRightClick();
   applyGlobalFooter();
+
+  setupImageLightbox();  // ✅ 튜토리얼 라이트박스
 });
