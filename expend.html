@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>지출결의서 해부 · edulabhaey</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"></div>
+      <div>
+        <div class="title">edulabhaey</div>
+        <div class="tag">신규 교행 0→1 · 실무 연구소</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a data-nav href="index.html">홈</a>
+      <a data-nav href="map.html">업무맵</a>
+      <a data-nav href="wave.html">파도타기</a>
+      <a data-nav href="payroll.html">급여</a>
+      <a data-nav href="glossary.html">용어·FAQ</a>
+    </nav>
+    <div class="search">
+      <div class="icon">🔎</div>
+      <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>지출결의서 해부</h1>
+    <p class="sub">지출결의서는 “찍는 종이”가 아니라 <b>정보 덩어리</b>입니다. 필드 하나가 리스크 포인트이기도 합니다.</p>
+    <span class="badge">최종 표기일(로딩 기준): <b id="lastUpdated">-</b></span>
+  </section>
+
+  <section class="grid">
+    <main>
+      <div class="card">
+        <h2 id="role">지출결의서의 역할(한 줄)</h2>
+        <div class="callout">
+          <div class="t">정의</div>
+          <p>예산 집행의 “정당성(근거) + 정확성(금액) + 대상(지급처) + 증빙(첨부)”을 문서로 고정하는 행위입니다.</p>
+        </div>
+
+        <h2 id="flow">세출·계약 큰 흐름(기본형)</h2>
+        <div class="codebox">
+수요/필요 발생 → 품의(기안) → (계약 필요 시) 계약체결 → 이행 → 검수 → 지출결의 → 이체/지급 → 기록보존
+        </div>
+
+        <h2 id="fields">지출결의서 필드 체크(신규가 보는 순서)</h2>
+        <div class="kv">
+          <div class="k">예산과목</div>
+          <div class="v">여기가 틀리면 정산/감사에서 제일 먼저 맞습니다. (사업/세목/원인행위 등 내부 기준 확인)</div>
+
+          <div class="k">지급대상</div>
+          <div class="v">누구에게 돈이 가는지. 계좌/사업자/인적사항 매칭 필수.</div>
+
+          <div class="k">지급사유</div>
+          <div class="v">“무엇을 왜 지급하는지”가 한 문장으로 설명돼야 합니다. 문장이 흐리면 리스크가 올라갑니다.</div>
+
+          <div class="k">금액근거</div>
+          <div class="v">산출내역/단가/기간/수량. 근거 문서(계약서, 견적, 정산표 등)와 숫자가 연결돼야 합니다.</div>
+
+          <div class="k">첨부서류</div>
+          <div class="v">필수 첨부 누락이 가장 흔한 사고입니다. “처리 전 체크리스트”로 방지합니다.</div>
+        </div>
+
+        <h2 id="checklist">처리 전/후 체크리스트(사고 방지용)</h2>
+        <details>
+          <summary>처리 전 체크(결재 올리기 전)</summary>
+          <ul>
+            <li>예산과목 맞나(사업/세목/원인행위 연결)</li>
+            <li>지급대상/계좌정보 맞나(서류와 일치)</li>
+            <li>산출내역 숫자 맞나(단가×수량×기간)</li>
+            <li>필수 첨부 빠짐없나(계약/검수/정산/증빙)</li>
+            <li>지급사유 문장 1개로 설명 되나</li>
+          </ul>
+        </details>
+        <details>
+          <summary>처리 후 체크(지급 이후)</summary>
+          <ul>
+            <li>지급완료 증빙/이체내역 보존</li>
+            <li>관련 문서(계약~검수~결의) 한 묶음으로 기록 폴더 정리</li>
+            <li>후속 조치(하자/정산/반납/세금계산서 등) 캘린더/메모 등록</li>
+          </ul>
+        </details>
+
+        <h2 id="compare">“잘된 결의서 vs 불안한 결의서” 감별 포인트</h2>
+        <div class="callout good">
+          <div class="t">잘된 결의서</div>
+          <ul>
+            <li>지급사유가 명확하고, 첨부가 사유를 증명한다</li>
+            <li>산출내역 숫자가 문서(계약/정산표)와 딱 맞는다</li>
+            <li>예산과목이 자연스럽게 연결된다</li>
+          </ul>
+        </div>
+        <div class="callout bad">
+          <div class="t">불안한 결의서</div>
+          <ul>
+            <li>지급사유가 두루뭉술하고 첨부가 빈약하다</li>
+            <li>산출근거가 “감”으로 작성된 느낌이다</li>
+            <li>예산과목이 ‘일단 아무거나’로 보인다</li>
+          </ul>
+        </div>
+
+        <div class="btnrow">
+          <a class="btn" href="wave.html">🌊 이전: 파도타기</a>
+          <a class="btn" href="payroll.html">💸 다음: 급여 0→1</a>
+        </div>
+      </div>
+    </main>
+    <aside class="card toc" id="toc"></aside>
+  </section>
+
+  <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+  <footer class="footer">
+    <div class="wrap row">
+      <div>© edulabhaey</div>
+      <div class="small"><a href="index.html">홈</a> · <a href="glossary.html">용어·FAQ</a></div>
+    </div>
+  </footer>
+</div>
+
+<script src="static/main.js"></script>
+</body>
+</html>

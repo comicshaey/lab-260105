@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>업무 전체 지도(맵) · edulabhaey</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"></div>
+      <div>
+        <div class="title">edulabhaey</div>
+        <div class="tag">신규 교행 0→1 · 실무 연구소</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a data-nav href="index.html">홈</a>
+      <a data-nav href="guide.html">사용가이드</a>
+      <a data-nav href="wave.html">파도타기</a>
+      <a data-nav href="expend.html">지출결의</a>
+      <a data-nav href="payroll.html">급여</a>
+      <a data-nav href="glossary.html">용어·FAQ</a>
+    </nav>
+    <div class="search">
+      <div class="icon">🔎</div>
+      <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>업무 전체 지도(맵)</h1>
+    <p class="sub">신규가 고립되는 이유는 “내 업무만 보고 전체 구조를 모르는 상태” 때문입니다. 먼저 판을 잡고, 그 다음 세부로 들어갑니다.</p>
+    <span class="badge">최종 표기일(로딩 기준): <b id="lastUpdated">-</b></span>
+  </section>
+
+  <section class="grid">
+    <main>
+      <div class="card">
+        <h2 id="big">학교행정 큰 그림(6덩어리)</h2>
+        <ul>
+          <li><b>학교회계</b>: 예산편성 → 집행(세입/세출) → 정산</li>
+          <li><b>계약</b>: 공사/용역/물품(수요조사→품의→계약→이행→검수→지급)</li>
+          <li><b>급여·인건비</b>: 대상자/근무정보 → 수당요건 → 산출 → 지급 → 기록</li>
+          <li><b>복무·근태</b>: 신청/결재 → 근태반영 → 증빙/기록</li>
+          <li><b>기록물·문서</b>: 접수/배부 → 시행/관리 → 보존/공개</li>
+          <li><b>민감업무</b>: 민원, 전력조회 등(리스크 관리가 핵심)</li>
+        </ul>
+
+        <h2 id="flow">업무는 “프로세스(동사)”로 외운다</h2>
+        <div class="callout">
+          <div class="t">예시</div>
+          <p><b>계약</b> = 수요조사 → 품의(기안) → 계약체결 → 이행 → 검수 → 대금지급 → 기록보존</p>
+          <p><b>연가</b> = 신청 → 결재 → 근태반영 → 기록보존</p>
+        </div>
+
+        <h2 id="3">업무별로 3가지만 확실히</h2>
+        <ul>
+          <li><b>Trigger</b>: 언제 이 업무가 발생하나</li>
+          <li><b>필수서류</b>: 첨부·증빙·근거</li>
+          <li><b>리스크</b>: 틀리면 어디서 문제가 터지나(감사/민원/정산)</li>
+        </ul>
+
+        <h2 id="next">다음 액션(학습 동선)</h2>
+        <div class="btnrow">
+          <a class="btn" href="wave.html">🌊 문서등록대장 파도타기</a>
+          <a class="btn" href="expend.html">🧾 지출결의서 해부</a>
+          <a class="btn" href="payroll.html">💸 급여·인건비 0→1</a>
+        </div>
+      </div>
+    </main>
+    <aside class="card toc" id="toc"></aside>
+  </section>
+
+  <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+  <footer class="footer">
+    <div class="wrap row">
+      <div>© edulabhaey</div>
+      <div class="small"><a href="index.html">홈</a> · <a href="guide.html">사용가이드</a></div>
+    </div>
+  </footer>
+</div>
+
+<script src="static/main.js"></script>
+</body>
+</html>

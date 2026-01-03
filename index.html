@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>신규 살려</title>
+  <meta name="description" content="신규 교육행정 0→1 실무 가이드(문서등록대장 파도타기, 지출결의 해부, 급여 0→1)" />
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html" aria-label="홈">
+        <div class="logo"></div>
+        <div>
+          <div class="title">신규 살려</div>
+          <div class="tag">신규 교행 0→1 · 실무 연구소</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <a data-nav href="map.html">업무 맵</a>
+        <a data-nav href="wave.html">파도 타기</a>
+        <a data-nav href="expend.html">지출 업무</a>
+        <a data-nav href="payroll.html">인건비 지급</a>
+        <a data-nav href="glossary.html">잡화점</a>
+      </nav>
+
+      <div class="search">
+        <div class="icon">🔎</div>
+        <input id="siteSearch" type="search" placeholder="페이지 검색: 예) 지출 업무, 파도 타기, 인건비 지급" autocomplete="off" />
+        <div id="searchResults" class="search-results" role="listbox"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="hero">
+      <h1>신규 살려~~</h1>
+      <p class="sub">
+        이럴 때 보러오세요: 나는 이미 학교에 던져졌고 당장 학교는 돌아가야 하는데 정작 업무는 아무것도 모른다. 편람에는 안 나오는데 물어볼 데는 없다. 
+      </p>
+      <div class="btnrow">
+        <a class="btn" href="guide.html"> 업무 전반 가이드</a>
+        <a class="btn" href="wave.html"> 문서등록대장 파도 타기</a>
+        <a class="btn" href="expend.html"> 지출 업무 처리</a>
+        <a class="btn" href="payroll.html"> 인건비 지급하기</a>
+      </div>
+      <div class="hr"></div>
+      <span class="badge"><b>MVP 1차</b> · 파도타기/지출결의/급여(정액급식비)</span>
+      <span class="badge">최종 표기일(로딩 기준): <b id="lastUpdated">-</b></span>
+    </section>
+
+    <section class="grid">
+      <main>
+        <div class="card">
+          <h2 id="mvp">MVP 1차 구성(바로 실무에서 쓰는 3개)</h2>
+          <div class="kv">
+            <div class="k">1) 시그니처</div>
+            <div class="v"><b>문서등록대장 파도타기</b> — 학교가 “어떻게 굴러가는지” 타임라인으로 읽기</div>
+            <div class="k">2) 돈 업무</div>
+            <div class="v"><b>지출결의서 해부</b> — 필드 의미/첨부서류/감사 리스크 포인트</div>
+            <div class="k">3) 인건비</div>
+            <div class="v"><b>급여·인건비 0→1</b> — 급여 큰틀 + 1모듈(정액급식비)로 모델케이스 학습</div>
+          </div>
+
+          <div class="callout warn">
+            <div class="t">운영 원칙(방어 라인)</div>
+            <ul>
+              <li>실제 학교/개인/사례 특정 언급 금지(가명/구조만).</li>
+              <li>법·규정 해석은 <b>참고용</b>이며, 반드시 최신 지침/편람 확인 권고.</li>
+              <li>“유일한 정답” 제시가 아니라 <b>업무사고 모델</b>을 제공.</li>
+            </ul>
+          </div>
+
+          <h3 id="howto">이 사이트로 공부하는 법(핵심 3줄)</h3>
+          <ul>
+            <li><b>흐름 먼저</b>: 수요/기안 → 처리 → 지급/정산 → 기록보존(동사로 연결)</li>
+            <li><b>3개만 고정</b>: Trigger(언제) / 필수서류(무엇) / 리스크(어디서 터지나)</li>
+            <li><b>사후정리</b>: 오늘 한 업무를 “내 기준서”로 5줄만 기록(반복 방지)</li>
+          </ul>
+
+          <div class="btnrow">
+            <a class="btn" href="map.html">🗺️ 업무 전체 지도 보기</a>
+            <a class="btn" href="skills.html">🧰 공통 실무 스킬</a>
+            <a class="btn" href="about.html">ℹ️ About / 운영 원칙</a>
+          </div>
+        </div>
+      </main>
+
+      <aside class="card toc" id="toc"></aside>
+    </section>
+
+    <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+    <footer class="footer">
+      <div class="wrap row">
+        <div>© edulabhaey · 신규 교행 0→1 실무 연구소</div>
+        <div class="small">
+          <a href="about.html">운영 원칙</a> · <a href="guide.html">사용 가이드</a> · <a href="glossary.html">용어·FAQ</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="static/main.js"></script>
+</body>
+</html>

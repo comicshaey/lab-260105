@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>공통 실무 스킬 · edulabhaey</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"></div>
+      <div>
+        <div class="title">edulabhaey</div>
+        <div class="tag">신규 교행 0→1 · 실무 연구소</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a data-nav href="index.html">홈</a>
+      <a data-nav href="guide.html">사용가이드</a>
+      <a data-nav href="wave.html">파도타기</a>
+      <a data-nav href="expend.html">지출결의</a>
+      <a data-nav href="glossary.html">용어·FAQ</a>
+    </nav>
+    <div class="search">
+      <div class="icon">🔎</div>
+      <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>공통 실무 스킬</h1>
+    <p class="sub">편람이 잘 안 가르치는 “진짜 쌩기초”입니다. 신규는 여기서 막혀서 시간이 녹습니다.</p>
+    <span class="badge">최종 표기일(로딩 기준): <b id="lastUpdated">-</b></span>
+  </section>
+
+  <section class="grid">
+    <main>
+      <div class="card">
+        <h2 id="files">전임자 파일 찾기(최소 루틴)</h2>
+        <ul>
+          <li>업무 폴더를 <b>업무 체계 기준</b>으로 고정(복무/급여/세출/계약/기록물/민원)</li>
+          <li>“참고자료(규정/공문)”와 “내가 만든 노트/서식”은 분리 보관</li>
+          <li>잘된 기안/결의/서식은 <b>모범사례 DB</b>로 따로 축적</li>
+        </ul>
+
+        <h2 id="read">기안문 읽는 법(신규용 3포인트)</h2>
+        <div class="kv">
+          <div class="k">1) 목적</div>
+          <div class="v">왜 하는 일인가(Trigger)</div>
+          <div class="k">2) 근거</div>
+          <div class="v">지침/규정/내부 기준이 어디에 박혀 있나</div>
+          <div class="k">3) 완료조건</div>
+          <div class="v">결재가 나면 “무엇이 완료된 상태”인가</div>
+        </div>
+
+        <h2 id="alarm">이상할 때 어디부터 확인?</h2>
+        <details>
+          <summary>숫자가 이상하다</summary>
+          <ul>
+            <li>산출내역(단가/수량/기간)부터 역산</li>
+            <li>근거 문서와 숫자 연결이 되는지 확인</li>
+          </ul>
+        </details>
+        <details>
+          <summary>결재라인이 갑자기 길어졌다</summary>
+          <ul>
+            <li>대외/민감/돈/감사리스크 가능성 ↑</li>
+            <li>근거 문서(첨부) 보강하고 사유 문장 명확히</li>
+          </ul>
+        </details>
+        <details>
+          <summary>다들 빨리 하라는데 나는 모르겠다</summary>
+          <ul>
+            <li>“무근거 처리”만 피하면 됨</li>
+            <li>확인 포인트를 2개로 쪼개서 질문(근거 위치 / 필수 첨부)</li>
+          </ul>
+        </details>
+
+        <div class="btnrow">
+          <a class="btn" href="guide.html">📌 사용 가이드</a>
+          <a class="btn" href="glossary.html">📚 용어·FAQ</a>
+        </div>
+      </div>
+    </main>
+    <aside class="card toc" id="toc"></aside>
+  </section>
+
+  <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+  <footer class="footer">
+    <div class="wrap row">
+      <div>© edulabhaey</div>
+      <div class="small"><a href="index.html">홈</a> · <a href="map.html">업무맵</a></div>
+    </div>
+  </footer>
+</div>
+
+<script src="static/main.js"></script>
+</body>
+</html>

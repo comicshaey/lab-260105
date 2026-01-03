@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>문서등록대장 파도타기 · edulabhaey</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"></div>
+      <div>
+        <div class="title">edulabhaey</div>
+        <div class="tag">신규 교행 0→1 · 실무 연구소</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a data-nav href="index.html">홈</a>
+      <a data-nav href="map.html">업무맵</a>
+      <a data-nav href="expend.html">지출결의</a>
+      <a data-nav href="payroll.html">급여</a>
+      <a data-nav href="glossary.html">용어·FAQ</a>
+    </nav>
+    <div class="search">
+      <div class="icon">🔎</div>
+      <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>문서등록대장 파도타기</h1>
+    <p class="sub"><b>문서등록대장 = 학교 운영 로그(Log)</b>입니다. 제목을 “해석”하면 업무 흐름이 보이고, 다음 문서가 예측됩니다.</p>
+    <span class="badge">시그니처 콘텐츠</span>
+    <span class="badge">최종 표기일(로딩 기준): <b id="lastUpdated">-</b></span>
+  </section>
+
+  <section class="grid">
+    <main>
+      <div class="card">
+        <h2 id="mindset">핵심 사고방식</h2>
+        <div class="callout">
+          <div class="t">파도타기 한 줄 정의</div>
+          <p>문서 제목을 보고 “이 문서가 왜 존재하는지” → “다음 단계 문서가 뭔지”를 연결해서 <b>업무 프로세스를 복원</b>하는 학습법입니다.</p>
+        </div>
+
+        <h2 id="how">문서 제목 해석법(신규 기준)</h2>
+        <ul>
+          <li><b>이 문서의 Trigger</b>는 무엇인가(예산, 계약, 급여, 복무, 기록물 등)</li>
+          <li><b>돈이 움직이나?</b> (지출결의/정산/계약/강사료 등) → 리스크 높음</li>
+          <li><b>다음 문서</b>를 예측한다(품의 다음 계약? 검수 다음 지급?)</li>
+        </ul>
+
+        <h2 id="steps">실전 절차(10분 루틴)</h2>
+        <div class="kv">
+          <div class="k">Step 1</div>
+          <div class="v">오늘자 문서등록대장에서 “돈이 오가는 문서”만 체크(지출/계약/급여 관련 키워드)</div>
+          <div class="k">Step 2</div>
+          <div class="v">각 문서 제목 옆에 “이 문서의 역할”을 5~10자 메모(예: 지급근거/검수/정산/요청)</div>
+          <div class="k">Step 3</div>
+          <div class="v">같은 키워드끼리 묶어 시간 순으로 배열 → 흐름이 보임</div>
+        </div>
+
+        <h2 id="tasks">연습 과제(신규가 효과 바로 느끼는 것들)</h2>
+        <details>
+          <summary>과제 1) “급여 관련 문서만” 추적해보기</summary>
+          <ul>
+            <li>제목에서 급여/수당/초과/인건비/성립전/연말정산 키워드 찾기</li>
+            <li>문서가 “산출”인지 “지급”인지 “정산”인지 분류</li>
+            <li>결론: 급여는 문서가 여러 부서/시점에 흩어져도 하나의 흐름임을 체감</li>
+          </ul>
+        </details>
+        <details>
+          <summary>과제 2) “공사 준공” 흐름만 타임라인으로 보기</summary>
+          <ul>
+            <li>계약/착공/변경/준공/검수/대금지급/하자 관련 키워드</li>
+            <li>결론: 준공은 ‘끝’이 아니라 지급/기록/하자관리로 이어짐</li>
+          </ul>
+        </details>
+        <details>
+          <summary>과제 3) “오늘자 문서 중 결재라인이 긴 것”만 골라보기</summary>
+          <ul>
+            <li>결재라인이 길면 보통 리스크가 큼(돈/민감/대외)</li>
+            <li>결론: “왜 결재가 길어졌는지” 생각하는 순간, 업무의 핵심이 잡힘</li>
+          </ul>
+        </details>
+
+        <h2 id="dont">신규가 절대 하면 안 되는 행동</h2>
+        <div class="callout bad">
+          <div class="t">금지</div>
+          <ul>
+            <li>근거 없이 결론 내리기</li>
+            <li>전임자 방식 무지성 복붙</li>
+            <li>“일단 처리하고 보자”로 결재 상신</li>
+          </ul>
+        </div>
+
+        <div class="btnrow">
+          <a class="btn" href="expend.html">🧾 다음: 지출결의서 해부</a>
+          <a class="btn" href="skills.html">🧰 전임자 파일/문서 읽기 스킬</a>
+        </div>
+      </div>
+    </main>
+    <aside class="card toc" id="toc"></aside>
+  </section>
+
+  <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+  <footer class="footer">
+    <div class="wrap row">
+      <div>© edulabhaey</div>
+      <div class="small"><a href="index.html">홈</a> · <a href="guide.html">사용가이드</a></div>
+    </div>
+  </footer>
+</div>
+
+<script src="static/main.js"></script>
+</body>
+</html>

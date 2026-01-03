@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>용어사전·FAQ · edulabhaey</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"></div>
+      <div>
+        <div class="title">edulabhaey</div>
+        <div class="tag">신규 교행 0→1 · 실무 연구소</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a data-nav href="index.html">홈</a>
+      <a data-nav href="guide.html">사용가이드</a>
+      <a data-nav href="wave.html">파도타기</a>
+      <a data-nav href="expend.html">지출결의</a>
+      <a data-nav href="payroll.html">급여</a>
+    </nav>
+    <div class="search">
+      <div class="icon">🔎</div>
+      <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>용어사전 · FAQ</h1>
+    <p class="sub">신규가 “자주 듣는데 이해 안 되는 말”을 현장 기준으로 짧고 정확하게 정리합니다.</p>
+    <span class="badge">최종 표기일(로딩 기준): <b id="lastUpdated">-</b></span>
+  </section>
+
+  <section class="grid">
+    <main>
+      <div class="card">
+        <h2 id="terms">자주 듣는 용어(초간단 정의)</h2>
+
+        <details>
+          <summary>품의 / 기안</summary>
+          <p>업무를 “하겠다/필요하다”를 결재로 승인받는 문서 흐름. 기관마다 내부 표현은 다를 수 있음.</p>
+        </details>
+
+        <details>
+          <summary>검수</summary>
+          <p>이행 결과물이 계약/요구사항에 맞는지 확인하고 “지급 가능 상태”로 만드는 단계.</p>
+        </details>
+
+        <details>
+          <summary>세입세출외현금</summary>
+          <p>학교회계 세입·세출 예산과 별개로 잠시 보관/정산되는 성격의 현금(정산·관리 규정 준수 필요).</p>
+        </details>
+
+        <details>
+          <summary>성립전예산</summary>
+          <p>예산 성립(확정) 전에 집행이 필요할 때 쓰는 구조. 근거/결재/사후 정산이 핵심.</p>
+        </details>
+
+        <details>
+          <summary>전결 / 권한위임</summary>
+          <p>결재권자 범위를 정해 “어디까지 누가 결재하는지”를 문서로 고정한 것. 리스크/감사와 직결.</p>
+        </details>
+
+        <h2 id="faq">신규 멘붕 TOP5 · 대응 알고리즘</h2>
+        <details>
+          <summary>1) 전임자 파일이 없다</summary>
+          <ul>
+            <li>같은 업무의 “결의서/기안문”부터 찾기(제목 키워드)</li>
+            <li>문서등록대장으로 타임라인 복원</li>
+            <li>모범사례 1개만 확보하면 나머지는 복원 가능</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>2) 모두 빨리 하라는데 무엇이 맞는지 모르겠다</summary>
+          <ul>
+            <li>무근거 처리만 피한다(근거 위치/필수 첨부 확인)</li>
+            <li>질문은 2개로 쪼갠다: “근거 어디?” “필수 첨부 뭐?”</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>3) 공문이 무슨 말인지 모르겠다</summary>
+          <ul>
+            <li>Trigger(왜 왔나)부터 한 줄로 요약</li>
+            <li>“요구사항(해야 하는 것)”만 체크리스트화</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>4) 서식에 뭘 넣어야 할지 모르겠다</summary>
+          <ul>
+            <li>모범사례 1개를 먼저 확보(잘된 결의/기안)</li>
+            <li>필드별 의미를 “리스크 관점”으로 이해</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>5) 이 정도는 괜찮겠지 싶다</summary>
+          <ul>
+            <li>그 감각이 가장 위험하다(감사/정산은 ‘괜찮겠지’를 잡는다)</li>
+            <li>근거 문서/첨부/산출근거 3개만 확인하면 대부분 방어 가능</li>
+          </ul>
+        </details>
+
+        <div class="btnrow">
+          <a class="btn" href="wave.html">🌊 파도타기</a>
+          <a class="btn" href="expend.html">🧾 지출결의</a>
+          <a class="btn" href="payroll.html">💸 급여</a>
+        </div>
+      </div>
+    </main>
+    <aside class="card toc" id="toc"></aside>
+  </section>
+
+  <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+  <footer class="footer">
+    <div class="wrap row">
+      <div>© edulabhaey</div>
+      <div class="small"><a href="index.html">홈</a> · <a href="about.html">About</a></div>
+    </div>
+  </footer>
+</div>
+
+<script src="static/main.js"></script>
+</body>
+</html>
