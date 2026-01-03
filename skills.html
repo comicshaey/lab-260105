@@ -16,13 +16,10 @@
         <div class="tag">신규 교행 0→1 · 실무 연구소</div>
       </div>
     </a>
-    <nav class="nav">
-      <a data-nav href="index.html">홈</a>
-      <a data-nav href="guide.html">사용가이드</a>
-      <a data-nav href="wave.html">파도타기</a>
-      <a data-nav href="expend.html">지출결의</a>
-      <a data-nav href="glossary.html">용어·FAQ</a>
-    </nav>
+
+    <!-- nav 내용은 main.js가 전 페이지 통일로 덮어씀 -->
+    <nav class="nav" aria-label="주요 메뉴"></nav>
+
     <div class="search">
       <div class="icon">🔎</div>
       <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
@@ -49,58 +46,106 @@
         </ul>
 
         <h2 id="edufine">에듀파인 화면 실무팁(신규가 바로 막히는 4개)</h2>
-<div class="callout warn">
-  <div class="t">요약</div>
-  <ul>
-    <li>공문 저장 버튼 위치</li>
-    <li>개인환경설정에서 “재정기안”을 상단 바로가기에 고정</li>
-    <li>재정기안 탭에서 “반송”으로 품의/원인행위/지출결의 재기안 흐름</li>
-    <li>공문 담당자 연락처(담당자/시행/전화/팩스) 확인 루트: PDF 저장 → 하단 확인</li>
-  </ul>
-</div>
+        <div class="callout warn">
+          <div class="t">요약</div>
+          <ul>
+            <li>공문 저장 버튼 위치</li>
+            <li>개인환경설정에서 “재정기안”을 상단 바로가기에 고정</li>
+            <li>재정기안 탭에서 “반송”으로 품의/원인행위/지출결의 재기안 흐름</li>
+            <li>공문 담당자 연락처(담당자/시행/전화/팩스) 확인 루트: PDF 저장 → 하단 확인</li>
+          </ul>
+        </div>
 
-<div class="imggrid">
-  <figure class="imgcard">
-    <img src="assets/img/image-001.jpg" alt="공문 저장 버튼 위치 캡처" />
-    <figcaption class="imgcap">
-      <p class="t">1) 공문 저장 버튼</p>
-      <p class="d">문서관리카드조회 화면 우측 상단 저장(디스크) 아이콘으로 PC 저장 후 활용.</p>
-    </figcaption>
-  </figure>
+        <div class="imggrid">
+          <!-- image-001 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-001.jpg"
+                alt="공문 저장 버튼 위치 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+              <div class="overlay">
+                <span class="marker" style="--x:86; --y:8;">1</span>
+              </div>
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">1) 공문 저장 버튼</p>
+              <p class="d">문서관리카드조회 화면 우측 상단 저장(디스크) 아이콘으로 PC 저장 후 활용.</p>
+            </figcaption>
+          </figure>
 
-  <figure class="imgcard">
-    <img src="assets/img/image-002.jpg" alt="개인환경설정에서 재정기안 상단 바로가기 추가 캡처" />
-    <figcaption class="imgcap">
-      <p class="t">2) 재정기안 탭을 상단 바로가기에 고정</p>
-      <p class="d">업무관리(우측 상단 사람 아이콘) → 개인환경설정 → 알림/바로가기 영역에서 재정기안 체크 후 저장.</p>
-    </figcaption>
-  </figure>
+          <!-- image-002 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-002.jpg"
+                alt="개인환경설정에서 재정기안 상단 바로가기 추가 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+              <div class="overlay">
+                <span class="marker" style="--x:17; --y:46;">1</span>
+                <span class="marker" style="--x:22; --y:73;">2</span>
+                <span class="marker" style="--x:44; --y:73;">3</span>
+              </div>
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">2) 재정기안 탭을 상단 바로가기에 고정</p>
+              <p class="d">업무관리(우측 상단 사람 아이콘) → 개인환경설정 → 알림/바로가기 영역에서 재정기안 체크 후 저장.</p>
+            </figcaption>
+          </figure>
 
-  <figure class="imgcard">
-    <img src="assets/img/image-003.jpg" alt="재정기안 탭에서 반송 버튼으로 재기안 캡처" />
-    <figcaption class="imgcap">
-      <p class="t">3) 재정기안 탭: 반송으로 재기안</p>
-      <p class="d">문서 체크 → 반송 클릭하면 품의/원인행위/지출결의 등 재정문서를 다시 기안하는 루프로 연결 가능.</p>
-    </figcaption>
-  </figure>
+          <!-- image-003 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-003.jpg"
+                alt="재정기안 탭에서 반송 버튼으로 재기안 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+              <div class="overlay">
+                <span class="marker" style="--x:80; --y:18;">1</span>
+              </div>
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">3) 재정기안 탭: 반송으로 재기안</p>
+              <p class="d">문서 체크 → 반송 클릭하면 품의/원인행위/지출결의 등 재정문서를 다시 기안하는 루프로 연결 가능.</p>
+            </figcaption>
+          </figure>
 
-  <figure class="imgcard">
-    <img src="assets/img/image-004.jpg" alt="공문 PDF에서 담당자/시행번호/전화/팩스 확인 캡처" />
-    <figcaption class="imgcap">
-      <p class="t">4) 담당자 연락처 확인(제일 많이 묻는 포인트)</p>
-      <p class="d">공문을 PDF로 저장하면 하단에 담당자명, 시행번호, 전화, 팩스가 표기됨. 문의/확인 전화는 여기서 바로 뽑아 쓰면 됨.</p>
-    </figcaption>
-  </figure>
-</div>
+          <!-- image-004 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-004.jpg"
+                alt="공문 PDF에서 담당자/시행번호/전화/팩스 확인 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+              <div class="overlay">
+                <span class="marker" style="--x:22; --y:70;">1</span>
+                <span class="marker" style="--x:26; --y:79;">2</span>
+                <span class="marker" style="--x:15; --y:88;">3</span>
+                <span class="marker" style="--x:36; --y:88;">4</span>
+              </div>
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">4) 담당자 연락처 확인(제일 많이 묻는 포인트)</p>
+              <p class="d">공문을 PDF로 저장하면 하단에 담당자명, 시행번호, 전화, 팩스가 표기됨. 문의/확인 전화는 여기서 바로 뽑아 쓰면 됨.</p>
+            </figcaption>
+          </figure>
+        </div>
 
-<div class="callout">
-  <div class="t">현장 적용 팁(신규 교육용 멘트)</div>
-  <p>
-    “담당자 연락처가 안 보이면, 공문을 먼저 PDF로 저장해서 하단 표기(담당자/시행/전화/팩스)를 확인하세요.”
-    이 한 문장만 알려줘도 신규 질문이 확 줄어듭니다.
-  </p>
-</div>
-
+        <div class="callout">
+          <div class="t">현장 적용 팁(신규 교육용 멘트)</div>
+          <p>
+            “담당자 연락처가 안 보이면, 공문을 먼저 PDF로 저장해서 하단 표기(담당자/시행/전화/팩스)를 확인하세요.”
+            이 한 문장만 알려줘도 신규 질문이 확 줄어듭니다.
+          </p>
+        </div>
 
         <h2 id="read">기안문 읽는 법(신규용 3포인트)</h2>
         <div class="kv">
@@ -141,17 +186,14 @@
         </div>
       </div>
     </main>
+
     <aside class="card toc" id="toc"></aside>
   </section>
 
   <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
 
-  <footer class="footer">
-    <div class="wrap row">
-      <div>© edulabhaey</div>
-      <div class="small"><a href="index.html">홈</a> · <a href="map.html">업무맵</a></div>
-    </div>
-  </footer>
+  <!-- footer는 main.js가 전 페이지 통일 문구로 덮어씀 -->
+  <footer class="footer"></footer>
 </div>
 
 <script src="static/main.js"></script>
