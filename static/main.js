@@ -314,3 +314,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   setupImageLightbox(); 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  document.body.appendChild(lightbox);
+
+  document.querySelectorAll(".img-zoomable").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.innerHTML = "";
+      const big = document.createElement("img");
+      big.src = img.src;
+      lightbox.appendChild(big);
+      lightbox.style.display = "flex";
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  document.addEventListener("keydown", e => {
+    if(e.key === "Escape") lightbox.style.display = "none";
+  });
+});
