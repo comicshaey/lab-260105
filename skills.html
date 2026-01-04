@@ -17,7 +17,6 @@
       </div>
     </a>
 
-    <!-- nav 내용은 main.js가 전 페이지 통일로 덮어씀 -->
     <nav class="nav" aria-label="주요 메뉴"></nav>
 
     <div class="search">
@@ -31,30 +30,35 @@
 <div class="wrap">
   <section class="hero">
     <h1>자잘한 실무 팁</h1>
-    <p class="sub">모르겠는데 편람에는 없다. 신규의 시간이 살살 녹는다.</p>
-    <span class="badge">최종 표기일(로딩 기준): <b id="lastUpdated">-</b></span>
+    <p class="sub">도무지 모르겠는데 편람에서 못 찾겠다. 신규의 시간이 살살 녹는다.</p>
+    <span class="badge">최종 업데이트: <b id="lastUpdated">-</b></span>
   </section>
 
   <section class="grid">
     <main>
       <div class="card">
-        <h2 id="files">전임자가 한 업무처리 내역 찾아보기</h2>
+        <h2 id="files">전임자가 처리한 내역 참고하기 (작성중)</h2>
         <ul>
-          <li>업무 폴더를 <b>업무 체계 기준</b>으로 고정(복무/급여/세출/계약/기록물/민원)</li>
-          <li>“참고자료(규정/공문)”와 “내가 만든 노트/서식”은 분리 보관</li>
-          <li>잘된 기안/결의/서식은 <b>모범사례 DB</b>로 따로 축적</li>
+          <li>문서등록대장에 전임자 성명으로 생산 문서를 검색한다. </li>
+          <li> </li>
+          <li> </li>
         </ul>
 
         <h2 id="edufine">에듀파인 소소한 팁</h2>
         <div class="callout warn">
-          <div class="t">요약</div>
+          <div class="t">캡처화면 참고</div>
           <ul>
-            <li>공문 저장 버튼 위치</li>
+            <li>공문 저장하는 방법</li>
             <li>“재정기안” 탭을 상단 바로가기에 고정하는 방법</li>
-            <li>품의·원인행위·지출결의 회수(반송)하는 방법</li>
-            <li>공문 담당자 성명 및 연락처 확인하는 방법</li>
+            <li>결재요청 했던 품의·원인행위·지출결의 재작성 하는 방법</li>
+            <li>공문 보고 업무 담당자 이름·연락처 찾는 방법</li>
           </ul>
         </div>
+
+        <br>
+        <p>이미지 파일을 누르면 확대됩니다.</p>
+        <br>
+
 
         <div class="imggrid">
           <!-- image-001 -->
@@ -71,8 +75,8 @@
               </div>
             </div>
             <figcaption class="imgcap">
-              <p class="t">1) 공문 저장 버튼</p>
-              <p class="d">문서관리카드 조회 화면 우측 상단의 디스크 모양 버튼을 누르면 pdf로 저장할 수 있다.</p>
+              <p class="t">1) 공문 저장하는 방법</p>
+              <p class="d">문서를 누르면 우측 상단에 디스크 모양 버튼이 있습니다. 이걸 누르면 문서 본문과 첨부파일을 저장할 수 있습니다.</p>
             </figcaption>
           </figure>
 
@@ -86,14 +90,14 @@
                 data-lb-group="edufine"
               />
               <div class="overlay">
-                <span class="marker" style="--x:17; --y:46;">1</span>
-                <span class="marker" style="--x:22; --y:73;">2</span>
-                <span class="marker" style="--x:44; --y:73;">3</span>
+                <span class="marker" style="--x:90; --y:90;">1</span>
+                <span class="marker" style="--x:15; --y:45;">2</span>
+                <span class="marker" style="--x:22; --y:17;">3</span>
               </div>
             </div>
             <figcaption class="imgcap">
               <p class="t">2) 상단 바로가기에 재정기안 탭 고정하는 방법</p>
-              <p class="d">우측 상단의 사람 모양 아이콘 누르기  → 개인 환경설정 탭 누르기 → 알림/바로가기 영역에서 재정기안 체크 후 저장하기</p>
+              <p class="d">우측 상단의 사람 모양 아이콘 누르기  → 개인 환경설정 탭 누르기 → 알림존에서 재정기안에 체크 후 저장</p>
             </figcaption>
           </figure>
 
@@ -107,12 +111,12 @@
                 data-lb-group="edufine"
               />
               <div class="overlay">
-                <span class="marker" style="--x:80; --y:18;">1</span>
+                <span class="marker" style="--x:80; --y:15;">1</span>
               </div>
             </div>
             <figcaption class="imgcap">
               <p class="t">3) 재정문서 재작성 하기</p>
-              <p class="d">문서 네모박스 체크 → 반송 클릭 → 품의·원인행위·지출결의 등 재정 문서 재작성 가능 (개요 등 수정 가능)</p>
+              <p class="d">결재 요청 상태인 문서 중에 반송할 목록에 네모박스 체크 → 반송 클릭 → 품의저장/원인행위저장/지출결의저장 등의 상태로 변경되어 있을 겁니다. 누르면 개요와 금액 등 수정하여 재작성 가능합니다.</p>
             </figcaption>
           </figure>
 
@@ -125,12 +129,6 @@
                 class="img-zoomable"
                 data-lb-group="edufine"
               />
-              <div class="overlay">
-                <span class="marker" style="--x:22; --y:70;">1</span>
-                <span class="marker" style="--x:26; --y:79;">2</span>
-                <span class="marker" style="--x:15; --y:88;">3</span>
-                <span class="marker" style="--x:36; --y:88;">4</span>
-              </div>
             </div>
             <figcaption class="imgcap">
               <p class="t">4) 담당자 연락처 확인하는 방법</p>
@@ -140,29 +138,47 @@
         </div>
 
         <div class="callout">
-          <div class="t">현장 적용 팁(신규 교육용 멘트)</div>
+          <div class="t">Q. 담당자에게 전화해서 뭐라고 말해야 할까요?</div>
           <p>
-            “담당자 연락처가 안 보이면, 공문을 먼저 PDF로 저장해서 하단 표기(담당자/시행/전화/팩스)를 확인하세요.”
-            이 한 문장만 알려줘도 신규 질문이 확 줄어듭니다.
+            소속과 성명을 먼저 밝히신 후에 이러한 용건으로 전화드렸다고 하시는 게 무난합니다. <br>
+            "안녕하세요, oo초등학교 행정실 김신규입니다. xx업무 처리 중에 질문이 있어서 전화드렸습니다."
           </p>
         </div>
 
-        <h2 id="read">기안문 읽을 때 체크</h2>
-        <div class="kv">
-          <div class="k">1) 목적</div>
-          <div class="v">왜 하는 일인가(Trigger)</div>
-          <div class="k">2) 근거</div>
-          <div class="v">지침/규정/내부 기준이 어디에 박혀 있나</div>
-          <div class="k">3) 완료조건</div>
-          <div class="v">결재가 나면 “무엇이 완료된 상태”인가</div>
-        </div>
+        <br>
+        <br>
 
-        <h2 id="alarm">무언가 잘못된 것 같을 때 어디부터 검토?</h2>
+        <h2 id="read">문서 기안할 때 체크리스트</h2>
+        <p>
+          ·오타는 없나요?<br>
+          ·본문에 적은 붙임 파일들을 실제로 첨부하셨나요?<br>
+          ·첨부파일은 제대로 작성되어 있나요?<br>
+          ·발송해야 하는 공문인데 수신기관 설정 없이 내부결재로 올리시지는 않았나요?<br>
+          ·자동발송에 체크하셨나요?<br>
+          ·<br>
+        </p>
+
+        <br>
+        <br>
+
+        <h2 id="read">(체크리스트)</h2>
+        <p>
+          ·<br>
+          ·<br>
+          ·<br>
+          ·<br>
+          ·<br>
+          ·<br>
+          ·<br>
+        </p>
+
+
+        <h2 id="alarm">무언가 잘못된 것 같을 때 체크리스트</h2>
         <details>
           <summary>숫자가 이상하다</summary>
           <ul>
-            <li>산출내역(단가/수량/기간)부터 역산</li>
-            <li>근거 문서와 숫자 연결이 되는지 확인</li>
+            <li>계산식이 잘못된 건 아닌지 검토해보세요.</li>
+            <li>개요에 적힌 금액과 실제 지출 금액이 다른 건 아닌지 확인해보세요.</li>
           </ul>
         </details>
         <details>
