@@ -1,27 +1,27 @@
 /* edulabhaey 공통 JS
-   - 정적사이트라도: 공통 네비/검색/목차/상단이동/푸터/라이트박스는 있어야 굴러감
+   - 공통 네비/검색/목차/상단이동/푸터/라이트박스
 */
 
 const PAGES = [
-  { url:"index.html",   title:"홈", desc:"MVP 1차 릴리즈 개요 및 빠른 진입" },
+  { url:"index.html",   title:"홈", desc:"개요" },
   { url:"about.html",   title:"About", desc:"사이트 목적/운영 원칙/주의사항" },
-  { url:"guide.html",   title:"신규 사용 가이드", desc:"이 사이트로 공부하는 법(루틴/규칙)" },
-  { url:"map.html",     title:"업무 전체 지도(맵)", desc:"학교행정 큰 그림(회계/계약/복무/기록)" },
+  { url:"guide.html",   title:"신규 생존가이드", desc:"살려줘" },
+  { url:"map.html",     title:"업무 전체 지도", desc:"학교행정 큰 그림(회계/계약/복무/기록)" },
   { url:"wave.html",    title:"문서등록대장 파도타기", desc:"학교 운영 로그 읽는 법(시그니처)" },
-  { url:"expend.html",  title:"지출결의서 해부", desc:"세출·계약 흐름 + 결의서 필드 해석" },
-  { url:"payroll.html", title:"급여·인건비 0→1", desc:"급여 큰틀 + 1모듈(정액급식비) 깊게" },
-  { url:"skills.html",  title:"공통 실무 스킬", desc:"전임자 파일 찾기/기안문 읽기/확인 루틴" },
+  { url:"expend.html",  title:"지출 업무", desc:"세출·계약 흐름 + 결의서 필드 해석" },
+  { url:"payroll.html", title:"인건비 지급", desc:"급여 큰틀 + 1모듈(정액급식비) 깊게" },
+  { url:"skills.html",  title:"실무 팁", desc:"전임자 파일 찾기/기안문 읽기/확인 루틴" },
   { url:"glossary.html",title:"용어사전·FAQ", desc:"신규가 막히는 용어/상황 정리" },
 ];
 
 const NAV_ITEMS = [
   { url:"index.html",   label:"홈" },
-  { url:"guide.html",   label:"사용가이드" },
+  { url:"guide.html",   label:"생존가이드" },
   { url:"map.html",     label:"업무 맵" },
   { url:"wave.html",    label:"파도타기" },
-  { url:"expend.html",  label:"지출결의" },
+  { url:"expend.html",  label:"지출업무" },
   { url:"payroll.html", label:"인건비" },
-  { url:"skills.html",  label:"실무스킬" },
+  { url:"skills.html",  label:"실무 팁" },
   { url:"glossary.html",label:"용어·FAQ" },
 ];
 
@@ -165,7 +165,7 @@ function applyGlobalFooter(){
         · 개인적으로 만든 비공식 사이트입니다.
       </div>
       <div class="small">
-        <a href="about.html">운영 원칙</a> · <a href="guide.html">사용 가이드</a> · <a href="glossary.html">용어·FAQ</a>
+        <a href="about.html">사이트 안내</a> · <a href="guide.html">사용가이드</a> · <a href="glossary.html">용어·FAQ</a>
       </div>
     </div>
   `;
@@ -179,12 +179,7 @@ function applyGlobalFooter(){
   footer.innerHTML = html;
 }
 
-/* ===== 라이트박스(튜토리얼 슬라이드) =====
-   요구사항:
-   1) 이미지 오버레이(번호/원) -> HTML에 마커 넣으면 확대에서도 그대로 보이게 "복제"
-   2) 확대 상태에서 캡션 고정 -> figcaption을 캡션으로 가져와 하단 고정
-   3) ← → 키로 이미지 넘기기 -> 같은 그룹(data-lb-group) 기준 슬라이드
-*/
+
 function setupImageLightbox(){
   // 라이트박스 DOM
   const lb = document.createElement("div");
@@ -308,7 +303,7 @@ function setupImageLightbox(){
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  applyGlobalNav();      // ✅ 전 페이지 메뉴 통일
+  applyGlobalNav();  
   setupSearch();
   setupTOC();
   setupTopButton();
@@ -317,5 +312,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
   disableRightClick();
   applyGlobalFooter();
 
-  setupImageLightbox();  // ✅ 튜토리얼 라이트박스
+  setupImageLightbox(); 
 });
