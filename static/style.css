@@ -613,3 +613,31 @@ details[open]{background: rgba(0,0,0,.02);}
   color:var(--muted);
   text-align:center;
 }
+
+/* 질문 펼침 영역 이미지: 한 줄에 하나 */
+details figure,
+details .img-item,
+details img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* figure 간 간격 */
+details figure {
+  margin: 16px 0 24px;
+}
+
+/* 이미지 자체 */
+details img {
+  width: 100%;
+  height: auto;
+}
+
+/* 캡션 */
+details figcaption {
+  margin-top: 6px;
+  font-size: .9rem;
+  color: var(--muted);
+  text-align: left; /* 매뉴얼 느낌 */
+}
