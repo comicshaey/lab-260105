@@ -572,32 +572,44 @@ details[open]{background: rgba(0,0,0,.02);}
   opacity:.95;
 }
 
-/* FAQ 내부 컨텐츠 */
-.faq-content {
-  padding: 12px 0 16px;
-}
-
 /* 이미지 그리드 */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+.image-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.image-grid img{
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  cursor: zoom-in;
+  border:1px solid var(--line);
 }
 
-/* 이미지 반응형 처리 */
-.image-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  border: 1px solid #e5e5e5;
-  background: #fff;
-  cursor: pointer;
-  transition: transform 0.15s ease;
+/* 라이트박스 */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.lightbox img{
+  max-width:95vw;
+  max-height:95vh;
+  background:#fff;
+  border-radius:12px;
 }
 
-/* 마우스 올렸을 때 */
-.image-grid img:hover {
-  transform: scale(1.02);
+.img-item{
+  margin:0;
 }
-
+.img-item figcaption{
+  margin-top:6px;
+  font-size:.9rem;
+  color:var(--muted);
+  text-align:center;
+}
