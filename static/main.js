@@ -165,7 +165,7 @@ function applyGlobalFooter(){
         · 개인적으로 만든 비공식 사이트입니다.
       </div>
       <div class="small">
-        <a href="about.html">사이트 안내</a> · <a href="guide.html">사용가이드</a> · <a href="glossary.html">용어·FAQ</a>
+        <a href="about.html">사이트안내</a> · <a href="guide.html">사용가이드</a> · <a href="glossary.html">질문 잡화점</a>
       </div>
     </div>
   `;
@@ -314,5 +314,3 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   setupImageLightbox(); 
 });
-
-
