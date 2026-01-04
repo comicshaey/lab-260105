@@ -11,7 +11,7 @@ const PAGES = [
   { url:"expend.html",  title:"지출 업무", desc:"세출·계약 흐름 + 결의서 필드 해석" },
   { url:"payroll.html", title:"인건비 지급", desc:"급여 큰틀 + 1모듈(정액급식비) 깊게" },
   { url:"skills.html",  title:"실무 팁", desc:"전임자 파일 찾기/기안문 읽기/확인 루틴" },
-  { url:"glossary.html",title:"자주 묻는 질문", desc:"신규가 막히는 용어/상황 정리" },
+  { url:"glossary.html",title:"질문 잡화점", desc:"신규가 막히는 용어/상황 정리" },
 ];
 
 const NAV_ITEMS = [
@@ -22,7 +22,7 @@ const NAV_ITEMS = [
   { url:"expend.html",  label:"지출업무" },
   { url:"payroll.html", label:"인건비" },
   { url:"skills.html",  label:"실무 팁" },
-  { url:"glossary.html",label:"자주 묻는 질문" },
+  { url:"glossary.html",label:"질문 잡화점" },
 ];
 
 function $(sel, el=document){ return el.querySelector(sel); }
@@ -314,4 +314,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   setupImageLightbox(); 
 });
+
 
