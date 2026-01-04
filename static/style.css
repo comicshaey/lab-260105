@@ -571,3 +571,20 @@ details[open]{background: rgba(0,0,0,.02);}
   .marker{ width: 30px; height: 30px; font-size: 13px; outline-width: 3px; }
   .lb-btn{ padding: 8px 10px; border-radius: 12px; }
 }
+
+
+/* =============================
+   홈 하단 일러스트
+   ============================= */
+
+.home-illust{
+  margin: 40px auto 20px;
+  text-align: center;
+}
+
+.home-illust img{
+  max-width: 520px;   /* 너무 크지 않게 */
+  width: 100%;
+  height: auto;
+  opacity: .95;       /* 살짝 부드럽게 */
+}
