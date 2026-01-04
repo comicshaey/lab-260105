@@ -573,18 +573,18 @@ details[open]{background: rgba(0,0,0,.02);}
 }
 
 
-/* =============================
-   홈 하단 일러스트
-   ============================= */
-
+/* 홈 하단 일러스트 */
 .home-illust{
-  margin: 40px auto 20px;
-  text-align: center;
+  max-width:var(--max);
+  margin:40px auto 20px;
+  padding:0 18px;
+  text-align:center;
 }
-
 .home-illust img{
-  max-width: 520px;   /* 너무 크지 않게 */
-  width: 100%;
-  height: auto;
-  opacity: .95;       /* 살짝 부드럽게 */
+  max-width:100%;   /* ✅ 화면 너비 초과 금지 */
+  width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto;
+  opacity:.95;
 }
